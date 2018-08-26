@@ -1,15 +1,15 @@
-package Signup_Login_User;
+package auth;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+
 
 public class Database {
 	
-	 static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	 static final String DB_URL = "jdbc:mysql://localhost:3306/cricketprojectdb?serverTimezone=UTC&useSSL=false";
-	 static final String USER = "root";
-	 static final String PASS = "password";
+	 private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+	 private static final String DB_URL = "jdbc:mysql://localhost:3306/cricketprojectdb?serverTimezone=UTC&useSSL=false";
+	 private static final String USER = "root";
+	 private static final String PASS = "password";
 	 
 	 public static Connection connection;
 	 
@@ -26,8 +26,6 @@ public class Database {
 	 public void closeConnection() {
 	        try {
 	            connection.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }

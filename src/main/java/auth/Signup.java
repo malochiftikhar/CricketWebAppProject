@@ -1,4 +1,4 @@
-package Signup_Login_User;
+package auth;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

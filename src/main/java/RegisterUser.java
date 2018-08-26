@@ -6,12 +6,12 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
-import Signup_Login_User.Database;
-import Signup_Login_User.Signup;
-import Signup_Login_User.User;
+import auth.Database;
+import auth.Signup;
+import auth.User;
 
 @Path("/register")
-public class Register_User {
+public class RegisterUser {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)

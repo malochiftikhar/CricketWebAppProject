@@ -4,7 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Signup_Login_User.Database;
+import auth.Database;
+
 
 public class RegisterCricketClub {
 	

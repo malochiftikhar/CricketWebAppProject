@@ -12,6 +12,7 @@ function login(email, password){
 	    connection.responseType = 'json';
 	    connection.onload = function (){
 	    let success = connection.response;
+	    console.log(connection.response)
 	       if(success.result == "true"){
 	           alert("success");
 	           window.location.href="LogedIn.html";

@@ -1,13 +1,8 @@
-package Signup_Login_User;
+package auth;
 
-import java.time.LocalDate;
-import java.util.Scanner;
+import auth.login.Login;
 
-import club.Address;
-import club.CricketClub;
-import club.RegisterCricketClub;
-
-public class Main { 
+public class Main {
 	
 	public static void main(String[] args) {
 		Database database = new Database();
