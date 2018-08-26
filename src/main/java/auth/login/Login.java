@@ -15,7 +15,7 @@ public class Login {
         String sqlStatement = "SELECT email, password FROM user WHERE email=? && password=?;";
         LoginResult loginResult = new LoginResult();
         try {
-
+        	
         	preparedStatement = Database.connection.prepareStatement(sqlStatement);
         	preparedStatement.setString(1, email);
         	preparedStatement.setString(2, password);
@@ -27,18 +27,18 @@ public class Login {
         		count++;
         	}
         	
-        	switch(count) {
-        	case 1: System.out.println("you are logged in");
-        			loginResult.setResult(true);
-        			break;
-        	default : System.out.println("failed to login");
-                    loginResult.setResult(true);
-        			break;
+        	if(count == 1) {
+        		System.out.println("loged in");
+        		loginResult.setResult(true);
+        	}else {
+        		System.out.println("Failed to login");
+        		loginResult.setResult(false);
         	}
         	
         } catch (Exception e) {
 			e.printStackTrace();
 		}
+        System.out.println(new Gson().toJson(loginResult));
 		return new Gson().toJson(loginResult);
 	}
 }

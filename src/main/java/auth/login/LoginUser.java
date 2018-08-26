@@ -17,10 +17,10 @@ public class LoginUser {
 	@Consumes(MediaType.APPLICATION_JSON)
     @Produces("application/json")
 	@Path("/login")
-	public void loginUser(String data) {
+	public String loginUser(String data) {
         Database database = new Database();
         database.connectDB();
-		Credentials credentials = new Gson().fromJson(data, Credentials.class);
-        new Login().login(credentials.getEmail(), credentials.getPassword());
+        Credentials credentials = new Gson().fromJson(data, Credentials.class);
+        return new Login().login(credentials.getEmail(), credentials.getPassword());
 	}
 }

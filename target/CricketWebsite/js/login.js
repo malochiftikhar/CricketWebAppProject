@@ -1,25 +1,19 @@
 function login(email, password){
-	
-	if(email==""||password==""){
-		alert("fills forms please")
-	}
-	else{
-		let connection = new XMLHttpRequest();
-		connection.open("POST", "http://localhost:8080/CricketWebsite/start/loginuser/login", true);
-		connection.setRequestHeader('Content-Type', 'application/json');
+		let request = new XMLHttpRequest();
+		request.open("POST", "http://localhost:8080/CricketWebsite/start/loginuser/login", true);
+		request.setRequestHeader('Content-Type', 'application/json');
 	    let data = JSON.stringify({"email": email, "password": password});
-	    connection.send(data);
-	    connection.responseType = 'json';
-	    connection.onload = function (){
-	    let success = connection.response;
-	    console.log(connection.response)
+	    request.send(data);
+	    request.responseType = 'json';
+	    request.onload = function (){
+	    var success = request.response;
 	       if(success.result == "true"){
 	           alert("success");
-	           window.location.href="LogedIn.html";
+	           window.location.href="Landing.html";
 	       }
 	       else{
 	           alert("Wrong Login");
 	       }
-	   } 
 	}
 }
+
