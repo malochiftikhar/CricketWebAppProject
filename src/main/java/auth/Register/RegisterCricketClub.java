@@ -1,4 +1,4 @@
-package club;
+package auth.Register;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,8 +12,8 @@ public class RegisterCricketClub {
 	public void createCricketClubAccount(String clubName, String email, String phoneNumber, String addressOne, String postcode, String street, String city ) {
 		clubAddressData(postcode, street, city);
 		PreparedStatement statment = null;
-		String sqlStatment = "INSERT INTO club(club_id, name, email, phone_number,address1, postcode)" 
-				+ "values (?, ?, ?, ?, ?)";
+		String sqlStatment = "INSERT INTO club(club_id, name, email, phone_number,address1, fk_postcode)" 
+				+ "values (?, ?, ?, ?, ?, ?)";
 		try {
 			statment = Database.connection.prepareStatement(sqlStatment);
 			statment.setInt(1, getNewId());
@@ -39,7 +39,7 @@ public class RegisterCricketClub {
 			statment  = Database.connection.prepareStatement(sqlStatment);
 			statment.setString(1, postcode);
 			statment.setString(2, street_name);
-			statment.setString(2, city);
+			statment.setString(3, city);
 			statment.execute();
 			} catch (SQLException e) {
 			e.printStackTrace();

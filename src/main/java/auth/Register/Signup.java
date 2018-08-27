@@ -1,24 +1,26 @@
-package auth;
+package auth.Register;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import auth.Database;
+
 public class Signup {
 
-	public void createUserAccount(String first_name, String last_name, String email, String password, Date dob, int clubId) {
+	public void createUserAccount(String firstName, String lastName, String email, String password, Date dob, int clubId) {
 		PreparedStatement statment = null;
 		String sqlStatment = "insert into user(user_id, fname, lname, email, password, dob, fk_club_id)"
 				+ "values (?, ?, ?, ?, ?, ?, ?)";
 		try {
 			statment = Database.connection.prepareStatement(sqlStatment);
 			statment.setInt(1, getNewId());
-			statment.setString(2, first_name);
-			statment.setString(3, last_name);
+			statment.setString(2, firstName);
+			statment.setString(3, lastName);
 			statment.setString(4, email);
 			statment.setString(5, password);
 			statment.setDate(6, dob);
-			statment.setInt(7, 1);
+			statment.setInt(7, clubId);
 			statment.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();

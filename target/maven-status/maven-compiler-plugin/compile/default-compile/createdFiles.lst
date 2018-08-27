@@ -1,13 +1,13 @@
 auth\login\Login.class
 auth\Credentials.class
-club\Address.class
-club\CricketClub.class
-RegisterUser.class
+auth\Register\RegisterCricketClub.class
 auth\login\LoginUser.class
+auth\Register\Address.class
 auth\Database.class
 JAXActivator.class
 auth\Signup.class
+auth\Register\RegisterUser.class
 auth\User.class
+auth\Register\CricketClub.class
 auth\Main.class
-club\RegisterCricketClub.class
 auth\login\LoginResult.class

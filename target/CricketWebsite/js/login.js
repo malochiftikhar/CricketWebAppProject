@@ -4,12 +4,14 @@ function login(email, password){
 		request.setRequestHeader('Content-Type', 'application/json');
 	    let data = JSON.stringify({"email": email, "password": password});
 	    request.send(data);
+	    console.log(Data);
 	    request.responseType = 'json';
 	    request.onload = function (){
-	    var success = request.response;
-	       if(success.result == "true"){
-	           alert("success");
-	           window.location.href="Landing.html";
+	    let rs = request.response;
+	    console.log(rs.result);
+	       if(rs.result){
+	    	   console.log("logged in");
+	           window.location.href="LogedIn.html";
 	       }
 	       else{
 	           alert("Wrong Login");

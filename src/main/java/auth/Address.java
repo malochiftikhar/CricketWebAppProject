@@ -1,4 +1,4 @@
-package club;
+package auth;
 
 public class Address {
 	
